@@ -16,16 +16,16 @@ Instalación
 
 Clonar el repositorio:
 
-  git clone https://github.com/tu-usuario/portsClean.sh.git
+    git clone https://github.com/tu-usuario/portsClean.sh.git
 
 Dar permisos de ejecucion
 
-  cd portsClean.sh
-  chmod +100 portsClean.sh
+    cd portsClean.sh
+    chmod +100 portsClean.sh
 
 Ejecutar el script
 
-  ./portsClean.sh -f tu_archivo_de_puertos
+    ./portsClean.sh -f tu_archivo_de_puertos
 
 
 
