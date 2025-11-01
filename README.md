@@ -12,4 +12,21 @@ Características:
 - Cuenta con un panel de ayuda:
 <img width="1372" height="367" alt="image" src="https://github.com/user-attachments/assets/80499c4b-75c0-4432-817b-5d707aafdb1f" />
 
+Instalación
+
+Clonar el repositorio:
+
+  git clone https://github.com/tu-usuario/portsClean.sh.git
+
+Dar permisos de ejecucion
+
+  cd portsClean.sh
+  chmod +100 portsClean.sh
+
+Ejecutar el script
+
+  ./portsClean.sh -f tu_archivo_de_puertos
+
+
+
 
