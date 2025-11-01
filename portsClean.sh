@@ -13,6 +13,10 @@ yellowColour="\e[0;33m\033[1m"
 purpleColour="\e[0;35m\033[1m"
 turquoiseColour="\e[0;36m\033[1m"
 grayColour="\e[0;37m\033[1m"
+orangeColour="\e[38;5;208m\033[1m"
+whiteColour="\e[0;97m\033[1m"
+whiteUltra="\e[38;5;231m"
+
 
 trap ctrl_c INT
 
@@ -26,7 +30,7 @@ function ctrl_c(){
 
 function helpPanel(){
 
-	echo -e "\n${yellowColour}[+]${endColour}${grayColour}Uso: ./portsClean.sh${endColour}\n"
+	echo -e "\n${yellowColour}[+]${endColour}${grayColour} Uso: ./portsClean.sh${endColour}\n"
 	echo -e "\t${purpleColour}f)${endColour}${blueColour} Especifica el archivo del que quieres extraer los puertos${endColour}\n"
 	echo -e "\t${grayColour} Ejemplo: ./portsClean.sh -f puertos${endColour}"
 	tput cnorm
@@ -34,14 +38,18 @@ function helpPanel(){
 
 function portClean(){
 
-	echo -e "\n${blueColour}==========[Puertos abiertos]==========${endColour}\n"
+	echo -e "\n${whiteColour}[*]${endColour}${blueColour} Extrayendo informacion..........${endColour}\n"
 
+	ip=$(cat $file| awk '{print $2}' | xargs | awk '{print $3}')
+	echo -e "\t${whiteColour}[*]${endColour}${blueColour} Direccion ip:${endColour} ${purpleColour}$ip${endColour}\n"
+
+	echo -e "\t${whiteColour}[*]${endColour}${blueColour} Puertos:${endColour}\n"
 	for linea in $(grep "Ports:" "puertos" | xargs | tr ' ' '\n');do
 	if [[ $linea =~ open ]];then
 		linea_2=$(echo "$linea" | tr '/' '\n' | xargs)
 		puerto=$(echo "$linea_2" | awk '{print $1}')
 		servicio=$(echo "$linea_2" | awk '{print $4}')
-		echo -e "\t${grayColour}[+]${endColour}${turquoiseColour} $puerto${endColour} -> ${purpleColour}$servicio${endColour}\n"
+		echo -e "\t\t${whiteColour}[*]${endColour}${turquoiseColour} $puerto${endColour} ${whiteColour}->${endColour} ${purpleColour}$servicio${endColour}\n"
 	fi
 	done
 	tput cnorm
