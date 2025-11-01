@@ -10,13 +10,7 @@ Colores en la terminal para una visualización rápida.
 
 Manejo de interrupciones con Ctrl+C.
 
-
-
-
-
-
-
-
+Cuenta con un panel de ayuda:
 <img width="1372" height="367" alt="image" src="https://github.com/user-attachments/assets/80499c4b-75c0-4432-817b-5d707aafdb1f" />
 
 
