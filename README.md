@@ -27,6 +27,13 @@ Ejecutar el script
 
     ./portsClean.sh -f tu_archivo_de_puertos
 
+#Output
+
+Asi es como se representan los datos una vez son tratados por esta herramienta
+
+<img width="1217" height="790" alt="image" src="https://github.com/user-attachments/assets/df18707f-8152-4cb8-80f9-4041f345a4d9" />
+
+
 
 
 
