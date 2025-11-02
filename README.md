@@ -27,7 +27,7 @@ Ejecutar el script
 
     ./portsClean.sh -f tu_archivo_de_puertos
 
-#Output
+# Output
 
 Asi es como se representan los datos una vez son tratados por esta herramienta
 
