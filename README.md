@@ -16,7 +16,7 @@ Un script en Bash para parsear y limpiar la salida de archivos de puertos, mostr
 
 Clonar el repositorio:
 
-    git clone https://github.com/tu-usuario/portsClean.sh.git
+    git clone https://github.com/avivyap/portsClean.sh.git
 
 Dar permisos de ejecucion
 
