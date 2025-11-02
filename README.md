@@ -1,4 +1,4 @@
-Un script en Bash para parsear y limpiar la salida de archivos de puertos, mostrando únicamente los puertos abiertos y sus servicios asociados de forma clara y colorida en la terminal.
+Un script en Bash para parsear y limpiar la salida de archivos de puertos, mostrando únicamente los puertos abiertos y sus servicios asociados de forma clara y colorida en la terminal, es ideal para analizar rápidamente resultados de escaneos de puertos y obtener solo la información relevante.
 
 # Características:
 - Extrae automáticamente los puertos abiertos de un archivo especificado.
