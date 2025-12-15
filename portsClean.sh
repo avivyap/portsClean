@@ -33,7 +33,7 @@ function helpPanel(){
         echo -e "\n${yellowColour}[+]${endColour}${grayColour} Uso: ./portsClean.sh${endColour}\n"
         echo -e "\t${purpleColour}f)${endColour}${blueColour} Especifica el archivo del que quieres extraer los puertos${endColour}\n"
                 echo -e "\t${purpleColour}o)${endColour}${blueColour} Especifica el nombre del archivo en el que quieres volcar el resultado de esta herramienta (opcional)${endColour}\n"
-        echo -e "\t${grayColour} Ejemplo: ./portsClean.sh -f puertos -o archivo_generado${endColour}"
+        echo -e "\t${grayColour} Ejemplo: ./portsClean.sh -f puertos -o archivo_nuevo${endColour}"
         tput cnorm
 }
 
