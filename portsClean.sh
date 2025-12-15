@@ -32,7 +32,8 @@ function helpPanel(){
 
         echo -e "\n${yellowColour}[+]${endColour}${grayColour} Uso: ./portsClean.sh${endColour}\n"
         echo -e "\t${purpleColour}f)${endColour}${blueColour} Especifica el archivo del que quieres extraer los puertos${endColour}\n"
-        echo -e "\t${grayColour} Ejemplo: ./portsClean.sh -f puertos${endColour}"
+                echo -e "\t${purpleColour}o)${endColour}${blueColour} Especifica el nombre del archivo en el que quieres volcar el resultado de esta herramienta (opcional)${endColour}\n"
+        echo -e "\t${grayColour} Ejemplo: ./portsClean.sh -f puertos -o archivo_generado${endColour}"
         tput cnorm
 }
 
@@ -56,18 +57,38 @@ function portClean(){
         puertos=$(echo $puertos | sed 's/,$//')
         echo -e "\n${whiteColour}[+]${endColour}${blueColour} Puertos copiados en la clipboard${endColour}\n"
         echo -n "$puertos" | xclip -selection clipboard
+                tput cnorm
+}
+
+
+function guardarArchivo(){
+
         tput cnorm
+        echo -e "\n${whiteColour}[+]${endColour}${blueColour} Creando archivo $output...${endColour}\n"
+        exec >"$output" 2>&1
+        portClean
 }
 
 tput civis
-declare -i parametro=0;while getopts ":f:" arg;do
+declare -i parametro=0;while getopts ":f:o:" arg;do
 
         case $arg in
-                f) file=$OPTARG; let parametro=1;;
+                f) file=$OPTARG; let parametro+=1;;
+                                o) output=$OPTARG; let parametro+=1;;
         esac
 done
 if [ $parametro == "0" ];then
         helpPanel
 else
-        portClean
+
+        if [ $parametro == "2" ];then
+
+       guardarArchivo
+
+        else
+
+                portClean
+
+        fi
+
 fi
